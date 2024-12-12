@@ -8,6 +8,7 @@ const routes=[
     },
     {
         path:"/signup",
+
         component:()=>import("../pages/signup.vue")
     },
     {

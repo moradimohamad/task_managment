@@ -33,8 +33,8 @@ export default {
 <template>
     <div>
         <div class="container mt-5">
-
             <div class="row justify-content-center">
+                <router-link to="/signup">Signup</router-link>
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header text-center">
