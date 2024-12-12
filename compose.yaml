@@ -1,0 +1,35 @@
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: task-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www
+      - ./storage:/var/www/storage
+    networks:
+      - task
+
+  mysql:
+    image: mysql:8.0
+    container_name: task-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: task_managment
+
+    ports:
+      - "8005:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - task
+
+networks:
+  task:
+
+volumes:
+  mysql-data:
