@@ -12,9 +12,15 @@ export default {
 <template>
 
     <div>
-        <RouterLink to="/tasks">tasks</RouterLink>
-        <RouterLink to="/">home</RouterLink>
-        <RouterView></RouterView>
+
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <RouterView></RouterView>
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 

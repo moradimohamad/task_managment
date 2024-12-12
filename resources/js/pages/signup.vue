@@ -6,16 +6,17 @@ export default {
     data() {
         return {
             user: {
-
+                name:null,
                 password:null,
+                password_confirmation:null,
                 email:null
             }
         }
     },
     methods: {
-        async login() {
+        async signup() {
             try {
-                await this.$store.dispatch("user/login",this.user);
+                await this.$store.dispatch("user/signup",this.user);
                 this.$router.push({name:'dashboard'})
             }catch (e){
                 const response = e.response;
@@ -38,7 +39,10 @@ export default {
             </div>
             <div class="card-body">
                 <form>
-
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control"  placeholder="Enter your name"  v-model="user.name">
+                    </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control"  placeholder="Enter your email" v-model="user.email">
@@ -47,8 +51,12 @@ export default {
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control"  placeholder="Enter your password" v-model="user.password">
                     </div>
+                    <div class="mb-3">
+                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control"  placeholder="Confirm your password" v-model="user.password_confirmation">
+                    </div>
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary" @click.prevent="login">Login</button>
+                        <button type="submit" class="btn btn-primary" @click.prevent="signup">Signup</button>
                     </div>
                 </form>
             </div>

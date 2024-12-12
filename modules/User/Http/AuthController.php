@@ -20,6 +20,7 @@ class AuthController extends Controller
         $user = resolve(UserRepository::class)->create($request->validated());
 
 
+
         $token =  auth()->login($user);
 
         AuthResponse::SuccessRegisterResponse($user,$token);

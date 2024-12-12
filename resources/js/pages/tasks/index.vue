@@ -1,14 +1,15 @@
 <script>
 export default {
+    data() {
+        return {
 
+        }
+    },
 }
 </script>
 
 <template>
 
-    <div>
-        tasks
-    </div>
 </template>
 
 <style scoped>

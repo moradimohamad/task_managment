@@ -9,7 +9,7 @@ class UserRepository
 
     public function create($data)
     {
-        User::query()->create([
+        return User::query()->create([
             'name'=>$data['name'],
             'email'=>$data['email'],
             'password'=>bcrypt($data['password'])
