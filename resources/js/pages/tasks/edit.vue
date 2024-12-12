@@ -52,12 +52,11 @@ export default {
 
     async created() {
 
-        const task =this.findById(1)
+        const task =this.findById(this.$route.params.id)
         if (task){
             this.task=task;
         }else {
-            const task = await this.show(1);
-            this.task=task;
+            this.task=await this.show(this.$route.params.id);
         }
         // const task =tasks.findById(this.$route.params.id)
         // console.log(task)

@@ -2,9 +2,7 @@
 
 export default {
     data() {
-        return {
-
-        }
+        return {}
     },
 }
 </script>
@@ -13,13 +11,9 @@ export default {
 
     <div>
 
-        <div class="container mt-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <RouterView></RouterView>
-                </div>
-            </div>
-        </div>
+
+        <RouterView></RouterView>
+
 
     </div>
 </template>

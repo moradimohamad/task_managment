@@ -1,5 +1,5 @@
 <script>
-import {mapGetters} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 
 export default {
     data() {
@@ -8,14 +8,27 @@ export default {
         }
     },
     computed: {
-        tasks() {
-            return this.$store.getters['tasks/tasks']
+        ...mapGetters('tasks',['tasks'])
+    },
+
+    methods: {
+        ...mapActions('tasks',['destroy','index']),
+
+        async remove(id){
+            console.log(id)
+            try {
+                await this.destroy(id);
+                this.index();
+
+            }catch (e) {
+
+            }
         }
     },
 
     created() {
 
-        this.$store.dispatch('tasks/index');
+        this.index();
     }
 }
 </script>
@@ -57,6 +70,7 @@ export default {
                     <td>{{task.user.name}}</td>
                     <td>
                         <router-link :to="{name:'tasks-edit',params:{id:task.id}}">ویرایش</router-link>
+                        <a href="" @click.prevent="remove(task.id)">حذف</a>
 
                     </td>
                 </tr>

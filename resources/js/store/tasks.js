@@ -31,7 +31,7 @@ export default {
 
     actions:{
 
-        async index({commit},payload){
+        async index({commit}){
             const {data}= await axios.get("api/tasks");
             commit("SET_TASKS",data.tasks);
         },
@@ -48,6 +48,12 @@ export default {
 
             const {data} = await axios.get(`api/tasks/${taskId}`);
             return data.task;
+        },
+
+        async destroy({commit},taskId){
+
+            await axios.delete(`api/tasks/${taskId}`);
+
         },
     }
 }
