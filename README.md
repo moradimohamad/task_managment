@@ -1,4 +1,4 @@
-# Laravek project with docker
+# Laravel task_managment
 
 ## Requirements
 - [Docker](https://www.docker.com/)
