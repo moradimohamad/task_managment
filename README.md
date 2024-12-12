@@ -16,7 +16,7 @@ cd task_managment
 ```bash
 docker compose up --build
 ```
-3. Install dependencies and run migrations
+3. Install dependencies and run migrations inside container
 ```bash
 docker exec -it task-app bash
 composer install
