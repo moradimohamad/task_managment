@@ -10,6 +10,21 @@ use Modules\Task\Repositories\TaskRepository;
 
 class TaskController extends Controller
 {
+
+
+    public function index()
+    {
+        $tasks= resolve(TaskRepository::class)->getTasksWithUser();
+
+        TaskResponse::getTasksResponse($tasks);
+    }
+
+    public function show($id)
+    {
+        $task=resolve(TaskRepository::class)->findBydId($id);
+        TaskResponse::singleTaskResponse($task);
+
+    }
     public function store(StoreTaskRequest $request)
     {
 

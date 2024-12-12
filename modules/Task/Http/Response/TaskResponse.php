@@ -29,4 +29,18 @@ class TaskResponse
     {
         \response()->json([],Response::HTTP_INTERNAL_SERVER_ERROR);
     }
+
+    public static function getTasksResponse($tasks)
+    {
+        \response()->json([
+            'tasks'=>$tasks
+        ])->throwResponse();
+    }
+
+    public static function singleTaskResponse($task)
+    {
+        response()->json([
+            'task'=>$task
+        ])->throwResponse();
+    }
 }

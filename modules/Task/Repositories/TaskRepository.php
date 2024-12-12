@@ -54,4 +54,14 @@ class TaskRepository
             return true;
         return false;
     }
+
+    public function getTasksWithUser()
+    {
+        return Task::query()->with('user')->get();
+    }
+
+    public function findBydId($id)
+    {
+        return Task::query()->find($id);
+    }
 }

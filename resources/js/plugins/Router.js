@@ -7,6 +7,10 @@ const routes=[
         component:()=>import("../pages/Home.vue")
     },
     {
+        path:"/signup",
+        component:()=>import("../pages/signup.vue")
+    },
+    {
         path:"/admin",
         component:()=>import("../layouts/admin.vue"),
         redirect:{name:'dashboard'},
@@ -22,8 +26,18 @@ const routes=[
             ,
             {
                 path:"tasks",
-
+                name:'tasks',
                 component:()=>import("../pages/tasks/index.vue")
+            },
+            {
+                path:"tasks/create",
+                name:'tasks-create',
+                component:()=>import("../pages/tasks/create.vue")
+            },
+            {
+                path:"tasks/:id/edit",
+                name:'tasks-edit',
+                component:()=>import("../pages/tasks/edit.vue")
             }
         ]
     },

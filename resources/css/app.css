@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    direction: rtl;
+}
+
+.card {
+    border-radius: 10px; /* گوشه‌های کارت گرد */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه سبک برای کارت */
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.table {
+    text-align: right; /* راست‌چین کردن محتویات جدول */
+    border-collapse: collapse; /* حذف فاصله بین سلول‌ها */
+}
+
+.table th, .table td {
+    padding: 12px; /* فاصله داخلی سلول‌ها */
+    border: 1px solid #ddd; /* مرز سبک برای سلول‌ها */
+}
+
+.table thead {
+    background-color: #f8f9fa; /* رنگ پس‌زمینه هدر جدول */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* رنگ پس‌زمینه ردیف‌های فرد */
+}
+
+.table tbody tr:hover {
+    background-color: #e2e6ea; /* تغییر رنگ پس‌زمینه ردیف در زمان هاور */
+}
