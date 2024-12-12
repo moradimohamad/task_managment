@@ -2,5 +2,6 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    \Modules\User\Providers\UserServiceProvider::class,
+    \Modules\Task\Providers\TaskServiceProvider::class,
+    Modules\User\Providers\UserServiceProvider::class,
 ];
