@@ -7,7 +7,9 @@ export default {
 <template>
 
     <div>
-        admin
+        <ul>
+            <li><router-link :to="{name:'tasks'}">تسک ها</router-link></li>
+        </ul>
     </div>
 </template>
 

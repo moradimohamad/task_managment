@@ -69,7 +69,7 @@ export default {
                     <td>{{task.created_at}}</td>
                     <td>{{task.user.name}}</td>
                     <td>
-                        <router-link :to="{name:'tasks-edit',params:{id:task.id}}">ویرایش</router-link>
+                        <router-link class="px-2" :to="{name:'tasks-edit',params:{id:task.id}}">ویرایش</router-link>
                         <a href="" @click.prevent="remove(task.id)">حذف</a>
 
                     </td>

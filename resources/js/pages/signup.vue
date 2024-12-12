@@ -33,34 +33,48 @@ export default {
 
 <template>
     <div>
-        <div class="card">
-            <div class="card-header text-center">
-                <h4>Signup</h4>
+
+        <div>
+            <div class="container mt-5">
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <h4>Signup</h4>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control"  placeholder="Enter your name"  v-model="user.name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control"  placeholder="Enter your email" v-model="user.email">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control"  placeholder="Enter your password" v-model="user.password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control"  placeholder="Confirm your password" v-model="user.password_confirmation">
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary" @click.prevent="signup">Signup</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control"  placeholder="Enter your name"  v-model="user.name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control"  placeholder="Enter your email" v-model="user.email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control"  placeholder="Enter your password" v-model="user.password">
-                    </div>
-                    <div class="mb-3">
-                        <label for="confirm-password" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control"  placeholder="Confirm your password" v-model="user.password_confirmation">
-                    </div>
-                    <div class="d-grid">
-                        <button type="submit" class="btn btn-primary" @click.prevent="signup">Signup</button>
-                    </div>
-                </form>
-            </div>
+
         </div>
+
+
+
     </div>
 </template>
 
