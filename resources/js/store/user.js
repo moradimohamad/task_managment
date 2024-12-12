@@ -33,6 +33,12 @@ export default {
             const {data}= await axios.post("/api/login",payload);
             localStorage.setItem('token',data.token);
             window.axios.defaults.headers.common['Authorization']=`Bearer ${data.token}`
+        },
+        async logout({commit},payload){
+
+            const {data}= await axios.post("/api/logout",payload);
+            localStorage.clear();
+            window.axios.defaults.headers.common['Authorization']="";
         }
     }
 }
